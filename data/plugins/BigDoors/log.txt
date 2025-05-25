@@ -11,3 +11,4 @@
 [25-05-2025 22:42:42] Updating openDirection of sliding door 3 "yes_or_no_doors" to EAST. If this is undesired, change it via the GUI.
 [25-05-2025 22:43:35] Updating openDirection of portcullis 4 "yes_or_no" to UP. If this is undesired, change it via the GUI.
 [25-05-2025 22:47:05] Updating openDirection of portcullis 5 "yes_or_no" to UP. If this is undesired, change it via the GUI.
+[25-05-2025 23:33:40] Starting BigDoors version: Alpha 0.1.8.58 (b1183)

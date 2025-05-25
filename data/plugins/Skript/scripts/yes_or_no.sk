@@ -3,8 +3,8 @@ on load:
 	set {zap.tak2} to location(44, 69, 62, world("yes_or_no"))
 	set {zap.nie1} to location(44, 69, 28, world("yes_or_no"))
 	set {zap.nie2} to location(18, 69, 44, world("yes_or_no"))
-    set {border.p1} to location(44, 69, 45, world("yes_or_no"))
-    set {border.p2} to location(18, 69, 45, world("yes_or_no"))
+	set {border.p1} to location(44, 69, 45, world("yes_or_no"))
+	set {border.p2} to location(18, 69, 45, world("yes_or_no"))
 
 function otworzZapadnie(p1: location, p2: location, kolor: text, gracz: player):
 	loop 5 times:
@@ -23,10 +23,12 @@ function otworzZapadnie(p1: location, p2: location, kolor: text, gracz: player):
 
 	set {_bx1} to x-coordinate of {border.p1}
 	set {_bx2} to x-coordinate of {border.p2}
+	set {_by1} to y-coordinate of {border.p1}
+	set {_by2} to y-coordinate of {border.p2}
 	set {_bz1} to z-coordinate of {border.p1}
 	set {_bz2} to z-coordinate of {border.p2}
-	set {_by} to y-coordinate of {border.p1}
 
+	# Usuwanie zapadni (niepoprawna odpowiedź)
 	set {_x} to {_minX}
 	while {_x} <= {_maxX}:
 		set {_y} to {_minY}
@@ -38,16 +40,21 @@ function otworzZapadnie(p1: location, p2: location, kolor: text, gracz: player):
 			add 1 to {_y}
 		add 1 to {_x}
 
+	# Usuwanie borderu (pełna bryła 3D)
 	set {_bx} to min({_bx1}, {_bx2})
 	while {_bx} <= max({_bx1}, {_bx2}):
-		set {_bz} to min({_bz1}, {_bz2})
-		while {_bz} <= max({_bz1}, {_bz2}):
-			set block at location({_bx}, {_by}, {_bz}, {_world}) to air
-			add 1 to {_bz}
+		set {_by} to min({_by1}, {_by2})
+		while {_by} <= max({_by1}, {_by2}):
+			set {_bz} to min({_bz1}, {_bz2})
+			while {_bz} <= max({_bz1}, {_bz2}):
+				set block at location({_bx}, {_by}, {_bz}, {_world}) to air
+				add 1 to {_bz}
+			add 1 to {_by}
 		add 1 to {_bx}
 
 	wait 5 seconds
 
+	# Odzyskiwanie zapadni
 	set {_x} to {_minX}
 	while {_x} <= {_maxX}:
 		set {_y} to {_minY}
@@ -64,12 +71,16 @@ function otworzZapadnie(p1: location, p2: location, kolor: text, gracz: player):
 			add 1 to {_y}
 		add 1 to {_x}
 
+	# Odtwarzanie borderu
 	set {_bx} to min({_bx1}, {_bx2})
 	while {_bx} <= max({_bx1}, {_bx2}):
-		set {_bz} to min({_bz1}, {_bz2})
-		while {_bz} <= max({_bz1}, {_bz2}):
-			set block at location({_bx}, {_by}, {_bz}, {_world}) to white_terracotta
-			add 1 to {_bz}
+		set {_by} to min({_by1}, {_by2})
+		while {_by} <= max({_by1}, {_by2}):
+			set {_bz} to min({_bz1}, {_bz2})
+			while {_bz} <= max({_bz1}, {_bz2}):
+				set block at location({_bx}, {_by}, {_bz}, {_world}) to white_terracotta
+				add 1 to {_bz}
+			add 1 to {_by}
 		add 1 to {_bx}
 
 command /poprawna <text>:
