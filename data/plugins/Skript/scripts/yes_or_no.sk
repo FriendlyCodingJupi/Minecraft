@@ -1,0 +1,82 @@
+on load:
+	set {zap.tak1} to location(18, 69, 46, world("yes_or_no"))
+	set {zap.tak2} to location(44, 69, 62, world("yes_or_no"))
+	set {zap.nie1} to location(44, 69, 28, world("yes_or_no"))
+	set {zap.nie2} to location(18, 69, 44, world("yes_or_no"))
+    set {border.p1} to location(44, 69, 45, world("yes_or_no"))
+    set {border.p2} to location(18, 69, 45, world("yes_or_no"))
+
+function otworzZapadnie(p1: location, p2: location, kolor: text, gracz: player):
+	loop 5 times:
+		set {_sec} to 6 - loop-number
+		broadcast "&eODPOWIEDŹ ZA &c%{_sec}%&e sekund..."
+		wait 1 second
+
+	set {_world} to world of {_p1}
+
+	set {_minX} to min(x-coordinate of {_p1}, x-coordinate of {_p2})
+	set {_maxX} to max(x-coordinate of {_p1}, x-coordinate of {_p2})
+	set {_minY} to min(y-coordinate of {_p1}, y-coordinate of {_p2})
+	set {_maxY} to max(y-coordinate of {_p1}, y-coordinate of {_p2})
+	set {_minZ} to min(z-coordinate of {_p1}, z-coordinate of {_p2})
+	set {_maxZ} to max(z-coordinate of {_p1}, z-coordinate of {_p2})
+
+	set {_bx1} to x-coordinate of {border.p1}
+	set {_bx2} to x-coordinate of {border.p2}
+	set {_bz1} to z-coordinate of {border.p1}
+	set {_bz2} to z-coordinate of {border.p2}
+	set {_by} to y-coordinate of {border.p1}
+
+	set {_x} to {_minX}
+	while {_x} <= {_maxX}:
+		set {_y} to {_minY}
+		while {_y} <= {_maxY}:
+			set {_z} to {_minZ}
+			while {_z} <= {_maxZ}:
+				set block at location({_x}, {_y}, {_z}, {_world}) to air
+				add 1 to {_z}
+			add 1 to {_y}
+		add 1 to {_x}
+
+	set {_bx} to min({_bx1}, {_bx2})
+	while {_bx} <= max({_bx1}, {_bx2}):
+		set {_bz} to min({_bz1}, {_bz2})
+		while {_bz} <= max({_bz1}, {_bz2}):
+			set block at location({_bx}, {_by}, {_bz}, {_world}) to air
+			add 1 to {_bz}
+		add 1 to {_bx}
+
+	wait 5 seconds
+
+	set {_x} to {_minX}
+	while {_x} <= {_maxX}:
+		set {_y} to {_minY}
+		while {_y} <= {_maxY}:
+			set {_z} to {_minZ}
+			while {_z} <= {_maxZ}:
+				if {_kolor} is "green":
+					set block at location({_x}, {_y}, {_z}, {_world}) to green_terracotta
+				else if {_kolor} is "red":
+					set block at location({_x}, {_y}, {_z}, {_world}) to red_terracotta
+				else:
+					send "&cNieznany kolor!" to {_gracz}
+				add 1 to {_z}
+			add 1 to {_y}
+		add 1 to {_x}
+
+	set {_bx} to min({_bx1}, {_bx2})
+	while {_bx} <= max({_bx1}, {_bx2}):
+		set {_bz} to min({_bz1}, {_bz2})
+		while {_bz} <= max({_bz1}, {_bz2}):
+			set block at location({_bx}, {_by}, {_bz}, {_world}) to white_terracotta
+			add 1 to {_bz}
+		add 1 to {_bx}
+
+command /poprawna <text>:
+	trigger:
+		if arg is "tak":
+			otworzZapadnie({zap.nie1}, {zap.nie2}, "red", player)
+		else if arg is "nie":
+			otworzZapadnie({zap.tak1}, {zap.tak2}, "green", player)
+		else:
+			send "&cUżyj tylko: /poprawna tak lub /poprawna nie" to player
