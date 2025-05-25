@@ -1,0 +1,5 @@
+[25-05-2025 21:07:49] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:07:49] New file created at plugins/BigDoors/doorDB.db
+[25-05-2025 21:10:19] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:14:10] Updating openDirection of door 1 "testdoor" to CLOCKWISE. If this is undesired, change it via the GUI.
+[25-05-2025 21:16:03] Updating openDirection of door 2 "testdoor1" to COUNTERCLOCKWISE. If this is undesired, change it via the GUI.
