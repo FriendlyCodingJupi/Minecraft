@@ -1,0 +1,22 @@
+[25-05-2025 21:07:49] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:07:49] New file created at plugins/BigDoors/doorDB.db
+[25-05-2025 21:10:19] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:14:10] Updating openDirection of door 1 "testdoor" to CLOCKWISE. If this is undesired, change it via the GUI.
+[25-05-2025 21:16:03] Updating openDirection of door 2 "testdoor1" to COUNTERCLOCKWISE. If this is undesired, change it via the GUI.
+[25-05-2025 21:28:16] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:31:48] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:40:00] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:40:56] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 21:41:50] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[25-05-2025 22:42:42] Updating openDirection of sliding door 3 "yes_or_no_doors" to EAST. If this is undesired, change it via the GUI.
+[25-05-2025 22:43:35] Updating openDirection of portcullis 4 "yes_or_no" to UP. If this is undesired, change it via the GUI.
+[25-05-2025 22:47:05] Updating openDirection of portcullis 5 "yes_or_no" to UP. If this is undesired, change it via the GUI.
+[25-05-2025 23:33:40] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[26-05-2025 00:09:39] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[26-05-2025 00:12:23] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[26-05-2025 00:16:14] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[26-05-2025 00:18:13] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[26-05-2025 00:35:20] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[26-05-2025 00:57:27] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[26-05-2025 01:18:34] Updating openDirection of door 6 "stadion" to CLOCKWISE. If this is undesired, change it via the GUI.
+[26-05-2025 01:20:31] Updating openDirection of portcullis 7 "stadion" to UP. If this is undesired, change it via the GUI.
