@@ -1,0 +1,41 @@
+portals:
+  yes_or_no_exit:
+    entryfee:
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    handlerscript: ''
+    owner: bossunio
+    location: 60.0,70.0,43.0:60.0,73.0,47.0
+    world: yes_or_no
+    destination: p:yes_or_no_open
+  yes_or_no_open:
+    entryfee:
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    handlerscript: ''
+    owner: bossunio
+    location: -10.0,96.0,7.0:-10.0,99.0,10.0
+    world: world
+    destination: p:yes_or_no_exit
+  football_open:
+    entryfee:
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    handlerscript: ''
+    owner: bossunio
+    location: -10.0,96.0,3.0:-10.0,99.0,6.0
+    world: world
+    destination: p:football_exit
+  football_exit:
+    entryfee:
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    handlerscript: ''
+    owner: bossunio
+    location: 65.0,4.0,60.0:65.0,7.0,63.0
+    world: football
+    destination: p:football_open
