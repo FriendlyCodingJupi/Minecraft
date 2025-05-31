@@ -1,4 +1,51 @@
 worlds:
+  speedway:
+    ==: MVWorld
+    hidden: 'false'
+    alias: speedway
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '1.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: PEACEFUL
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'true'
+    portalForm: ALL
+    gameMode: SURVIVAL
+    keepSpawnInMemory: 'true'
+    spawnLocation:
+      ==: MVSpawnLocation
+      x: 13.210764074273674
+      y: -60.0
+      z: 22.771754257319888
+      pitch: 4.199812
+      yaw: 179.0354
+    autoLoad: 'true'
+    bedRespawn: 'true'
+    worldBlacklist: []
+    environment: NORMAL
+    seed: '-2284602652780470471'
+    generator: VoidGenerator
+    playerLimit: '-1'
+    allowFlight: 'true'
   world_the_end:
     ==: MVWorld
     hidden: 'false'

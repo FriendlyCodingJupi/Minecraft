@@ -10,3 +10,4 @@ japidi bosman bedzie klepal kod o ja
  6. https://www.spigotmc.org/resources/skript.114544/
  7. https://dev.bukkit.org/projects/voidgenerator
  8. https://dev.bukkit.org/projects/cubeball
+ 9. https://www.spigotmc.org/resources/mythical-races-free-elves-dwarfs-and-so-forth.92564/

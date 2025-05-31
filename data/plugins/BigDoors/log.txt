@@ -20,3 +20,9 @@
 [26-05-2025 00:57:27] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
 [26-05-2025 01:18:34] Updating openDirection of door 6 "stadion" to CLOCKWISE. If this is undesired, change it via the GUI.
 [26-05-2025 01:20:31] Updating openDirection of portcullis 7 "stadion" to UP. If this is undesired, change it via the GUI.
+[31-05-2025 16:51:38] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[31-05-2025 16:58:01] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[31-05-2025 17:20:47] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[31-05-2025 18:50:24] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[31-05-2025 22:22:23] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
+[31-05-2025 22:29:17] Starting BigDoors version: Alpha 0.1.8.58 (b1183)
