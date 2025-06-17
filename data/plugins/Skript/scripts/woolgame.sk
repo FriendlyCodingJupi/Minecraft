@@ -1,0 +1,63 @@
+command /woolgame [<text>]:
+    permission: woolgame.use
+    trigger:
+        if arg is "type1":
+            send "&aGenerating chaotic block zone with 1 wool block slowly..."
+            set {_center} to location of player
+            set {_size} to 10
+            set {_minX} to x-coordinate of {_center} - {_size}
+            set {_minY} to y-coordinate of {_center} - {_size}
+            set {_minZ} to z-coordinate of {_center} - {_size}
+
+            set {_blocks::*} to stone, cobblestone, deepslate, granite, andesite, diorite, mossy_cobblestone, blackstone, basalt, obsidian, sand, gravel, sandstone, prismarine, netherrack, nether_bricks, purpur_block, sculk, quartz_block, lapis_block
+
+            clear {_loc::*}
+            set {_count} to 0
+
+            set {_xi} to 0
+            loop 20 times:
+                set {_yi} to 0
+                loop 20 times:
+                    set {_zi} to 0
+                    loop 20 times:
+                        set {_realX} to {_minX} + {_xi}
+                        set {_realY} to {_minY} + {_yi}
+                        set {_realZ} to {_minZ} + {_zi}
+                        set {_loc::%{_count}%} to location at {_realX}, {_realY}, {_realZ}
+                        add 1 to {_count}
+                        add 1 to {_zi}
+                    add 1 to {_yi}
+                add 1 to {_xi}
+
+            # Only allow wool to be placed at least 1 block inside from each edge
+            clear {_validWoolIndices::*}
+            set {_i} to 0
+            loop {_count} times:
+                set {_target} to {_loc::%{_i}%}
+                set {_dx} to x-coordinate of {_target} - {_minX}
+                set {_dy} to y-coordinate of {_target} - {_minY}
+                set {_dz} to z-coordinate of {_target} - {_minZ}
+                
+                if {_dx} > 0:
+                    if {_dx} < 19:
+                        if {_dy} > 0:
+                            if {_dy} < 19:
+                                if {_dz} > 0:
+                                    if {_dz} < 19:
+                                        add {_i} to {_validWoolIndices::*}
+                add 1 to {_i}
+
+            set {_woolIndex} to random element out of {_validWoolIndices::*}
+            set {_i} to 0
+
+            loop {_count} times:
+                set {_target} to {_loc::%{_i}%}
+                if {_i} = {_woolIndex}:
+                    set block at {_target} to white_wool
+                else:
+                    set block at {_target} to random element out of {_blocks::*}
+                add 1 to {_i}
+
+            send "&bOne wool block placed in chaos. Let the search begin!"
+        else:
+            send "&cUnknown woolgame type. Try: /woolgame type1"

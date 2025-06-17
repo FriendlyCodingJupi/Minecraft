@@ -1,0 +1,15 @@
+version: "3"
+services:
+  minecraft:
+    image: marctv/minecraft-papermc-server:${MC_VERSION}
+    restart: always
+    container_name: "${CONTAINER_NAME}"
+    environment:
+      MEMORYSIZE: "${MEMORYSIZE}"
+      PAPERMC_FLAGS: "${PAPERMC_FLAGS}"
+    volumes:
+      - ./data:/data
+    ports:
+      - "${MC_PORT}:25565"
+    stdin_open: true
+    tty: true
